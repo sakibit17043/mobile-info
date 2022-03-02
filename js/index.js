@@ -4,6 +4,7 @@ const searchPhone =()=>{
     const searchText =searchField.value;
 
     searchField.value ='';
+    // empty string error handle 
     if(searchText==''){
     
 
@@ -19,6 +20,7 @@ const searchPhone =()=>{
     }
    
 }
+// show result 
 const displaySearchResult =mobiles=>{
     const searchResult =document.getElementById("search-result");
     
@@ -58,7 +60,7 @@ const displaySearchResult =mobiles=>{
 }
     
 }
-
+//  load id 
 const loadMobileDetail =mobileId=>{
     const url =`https://openapi.programming-hero.com/api/phone/${mobileId}`;
 
@@ -66,7 +68,8 @@ const loadMobileDetail =mobileId=>{
     .then(res=>res.json())
     .then(data=>displayMobileDetail(data.data));
 
-}
+} 
+// show mobile detail 
 const displayMobileDetail =mobile=>{
     
     const mobileDiv =document.getElementById("mobile-detail");
